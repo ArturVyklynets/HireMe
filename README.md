@@ -46,4 +46,35 @@ The platform offers secure authentication ðŸ”’, a user-friendly booking system ð
   - As an admin, I want to moderate or remove inappropriate reviews so that the content is clean.
   - As an admin, I want to view system analytics (e.g., most active users, most booked categories) so that I can improve the platform.
   - As an admin, I want to manage reported users or content so that I can enforce community guidelines.
+
+## Quality requirements
+  ###Usability
+    - The user interface must be intuitive and easy to use without requiring training.
+    - The booking process should take no more than 3 steps.
+    - The platform must be mobile-friendly and responsive across all devices.
+
+### Performance
+  - The system should respond to user actions in under 1 second in 95% of cases.
+  - It must support at least 1000 concurrent users without significant performance degradation.
   
+### Scalability
+  - The architecture should support horizontal scaling of individual services.
+  - Adding new service categories or specialists must not require changes to the core codebase.
+  
+### Security
+  - User data must be securely stored (e.g., passwords encrypted using bcrypt).
+  - All API requests must be secured using HTTPS.
+  - A role-based access model must be implemented to ensure only authorized users can book or offer services.
+
+### Availability
+  - The system must maintain 99.9% uptime per month.
+  - A failure in one service should not cause the entire system to crash (fault tolerance and resilience required).
+
+### Maintainability
+  - Each service should be independently deployable and modifiable without affecting others.
+  - The codebase should follow standardized practices (e.g., PEP8 for Python, ESLint for JavaScript).
+  - Unit and integration tests must cover at least 80% of the codebase.
+
+### Interoperability
+  - APIs must comply with the OpenAPI 3.0 specification.
+  - The system should support easy integration with third-party services (e.g., payment gateways like Stripe or LiqPay).
