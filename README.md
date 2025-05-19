@@ -38,7 +38,7 @@ The platform offers secure authentication 🔒, a user-friendly booking system �
   - As a specialist, I want to set or change the price for my services so that clients know what to expect.
   - As a specialist, I want to read reviews and ratings from clients so that I can improve my service.
   - As a specialist, I want to view upcoming and past bookings so that I can manage my workload.
-  - As a specialist, I want to withdraw my earnings via bank or PayPal so that I can get paid.
+  - As a specialist, I want to withdraw my earnings via bank so that I can get paid.
 
 ### 🛡️ Admin
   - As an admin, I want to view all users and specialists so that I can manage the platform.
@@ -72,9 +72,9 @@ The platform offers secure authentication 🔒, a user-friendly booking system �
 
 ### Maintainability
   - Each service should be independently deployable and modifiable without affecting others.
-  - The codebase should follow standardized practices (e.g., PEP8 for Python, ESLint for JavaScript).
+  - The codebase should follow standardized practices.
   - Unit and integration tests must cover at least 80% of the codebase.
 
 ### Interoperability
   - APIs must comply with the OpenAPI 3.0 specification.
-  - The system should support easy integration with third-party services (e.g., payment gateways like Stripe or LiqPay).
+  - The system should support easy integration with third-party services.
