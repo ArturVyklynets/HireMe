@@ -5,7 +5,7 @@ The platform offers secure authentication ðŸ”’, a user-friendly booking system ð
 ## Main components
   - Authentication and Authorization Service: Manages user registration, login, session management, and access control based on user roles (e.g., clients, specialists).
   - Booking Service: Handles bookings, specialist availability, creating and canceling service appointments.
-  - Service Catalog Service: Stores and provides information about available services, specialists, pricing, descriptions, and categories.
+  - Catalog Service: Stores and provides information about available services, specialists, pricing, descriptions, and categories.
   - Payment Service: Processes financial transactions, billing, payment handling, possibly integrating with payment systems.
   - Notification Service: Sends notifications to users about booking statuses, reminders, and updates.
 ## Functional requirements
