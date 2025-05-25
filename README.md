@@ -78,3 +78,32 @@ The platform offers secure authentication 🔒, a user-friendly booking system �
 ### Interoperability
   - APIs must comply with the OpenAPI 3.0 specification.
   - The system should support easy integration with third-party services.
+
+## 🧑‍💼 1. Auth Service
+![Auth Service](./AuthService.png)
+
+---
+
+## 📅 2. Booking Service
+![Booking Service](./BookingService1.png)
+![Booking Service](./BookingService2.png)
+
+---
+
+## 💳 3. Payment Service
+
+![Payment Service](./Payment1Service.png)
+![Payment Service](./Payment2Service.png)
+
+---
+
+## 📢 4. Notification Service
+
+---
+
+## 🗂️ 5. Category Service
+
+![Categories Service](./Categories1Service.png)
+![Categories Service](./Categories2Service.png)
+![Categories Service](./Categories3Service.png)
+
