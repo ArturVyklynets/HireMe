@@ -79,6 +79,7 @@ The platform offers secure authentication 🔒, a user-friendly booking system �
   - APIs must comply with the OpenAPI 3.0 specification.
   - The system should support easy integration with third-party services.
 
+#Behaviours
 ## 🧑‍💼 1. Auth Service
 ![Auth Service](./AuthService.png)
 
