@@ -1,0 +1,168 @@
+asyncapi: '2.6.0'
+info:
+  title: HireMe Notification Service
+  version: '1.0.0'
+  description: |
+    Notification Service для платформи HireMe.
+    Слухає події по платежах, зняттях, поверненнях і бронюваннях,
+    щоб надсилати користувачам актуальні сповіщення.
+
+servers:
+  production:
+    url: mqtt://broker.hireme.com:1883
+    protocol: mqtt
+
+channels:
+  payments/notifications:
+    subscribe:
+      summary: Сповіщення про події платежів (створено, оновлено)
+      message:
+        $ref: '#/components/messages/PaymentNotification'
+
+  withdrawals/notifications:
+    subscribe:
+      summary: Сповіщення про зняття коштів (виплати спеціалістам)
+      message:
+        $ref: '#/components/messages/WithdrawalNotification'
+
+  refunds/notifications:
+    subscribe:
+      summary: Сповіщення про статус повернень коштів
+      message:
+        $ref: '#/components/messages/RefundNotification'
+
+  booking/notifications:
+    subscribe:
+      summary: Сповіщення про події бронювання (створено, змінено статус)
+      message:
+        $ref: '#/components/messages/BookingNotification'
+
+components:
+  messages:
+
+    PaymentNotification:
+      name: PaymentNotification
+      title: Payment Notification Message
+      summary: Повідомлення про платіжну подію
+      payload:
+        type: object
+        required:
+          - paymentId
+          - bookingId
+          - amount
+          - currency
+          - status
+          - timestamp
+        properties:
+          paymentId:
+            type: string
+            description: Унікальний ідентифікатор платежу
+          bookingId:
+            type: string
+            description: Ідентифікатор бронювання, пов’язаного з платежем
+          amount:
+            type: number
+            format: float
+          currency:
+            type: string
+          status:
+            type: string
+            enum: [pending, completed, failed, refunded]
+            description: Статус платежу
+          timestamp:
+            type: string
+            format: date-time
+
+    WithdrawalNotification:
+      name: WithdrawalNotification
+      title: Withdrawal Notification Message
+      summary: Повідомлення про подію зняття коштів
+      payload:
+        type: object
+        required:
+          - withdrawalId
+          - specialistId
+          - amount
+          - status
+          - timestamp
+        properties:
+          withdrawalId:
+            type: string
+          specialistId:
+            type: string
+          amount:
+            type: number
+            format: float
+          status:
+            type: string
+            enum: [pending, approved, rejected, paid]
+          timestamp:
+            type: string
+            format: date-time
+
+    RefundNotification:
+      name: RefundNotification
+      title: Refund Notification Message
+      summary: Повідомлення про статус повернення коштів
+      payload:
+        type: object
+        required:
+          - refundId
+          - paymentId
+          - status
+          - reason
+          - timestamp
+        properties:
+          refundId:
+            type: string
+          paymentId:
+            type: string
+          status:
+            type: string
+            enum: [pending, approved, rejected]
+          reason:
+            type: string
+          timestamp:
+            type: string
+            format: date-time
+
+    BookingNotification:
+      name: BookingNotification
+      title: Booking Notification Message
+      summary: Сповіщення про зміну статусу бронювання
+      payload:
+        type: object
+        required:
+          - bookingId
+          - status
+          - userId
+          - specialistId
+          - service
+          - date
+          - timestamp
+        properties:
+          bookingId:
+            type: string
+            description: Унікальний ідентифікатор бронювання
+          status:
+            type: string
+            enum: [created, confirmed, canceled, completed]
+            description: Поточний статус бронювання
+          userId:
+            type: string
+            description: Ідентифікатор користувача, який зробив бронювання
+          specialistId:
+            type: string
+            description: Ідентифікатор спеціаліста
+          service:
+            type: string
+            description: Назва або тип послуги
+          date:
+            type: string
+            format: date-time
+            description: Дата і час бронювання
+          timestamp:
+            type: string
+            format: date-time
+            description: Час події
+
