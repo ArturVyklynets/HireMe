@@ -99,6 +99,7 @@ The platform offers secure authentication 🔒, a user-friendly booking system �
 
 ## 📢 4. Notification Service
 
+[notification-service-asyncapi.yaml](./notification-service-asyncapi.yaml)
 ---
 
 ## 🗂️ 5. Category Service
