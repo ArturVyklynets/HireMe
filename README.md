@@ -46,12 +46,12 @@ The platform offers secure authentication ðŸ”’, a user-friendly booking system ð
   - As an admin, I want to moderate or remove inappropriate reviews so that the content is clean.
   - As an admin, I want to view system analytics (e.g., most active users, most booked categories) so that I can improve the platform.
   - As an admin, I want to manage reported users or content so that I can enforce community guidelines.
-
+  
 ## Quality requirements
-  ###Usability
-    - The user interface must be intuitive and easy to use without requiring training.
-    - The booking process should take no more than 3 steps.
-    - The platform must be mobile-friendly and responsive across all devices.
+### Usability
+  - The user interface must be intuitive and easy to use without requiring training.
+  - The booking process should take no more than 3 steps.
+  - The platform must be mobile-friendly and responsive across all devices.
 
 ### Performance
   - The system should respond to user actions in under 1 second in 95% of cases.
