@@ -80,6 +80,7 @@ The platform offers secure authentication 🔒, a user-friendly booking system �
   - The system should support easy integration with third-party services.
 
 ## Behaviours
+
 ### 🧑‍💼 1. Auth Service
 ![Auth Service](./AuthService.png)
 
