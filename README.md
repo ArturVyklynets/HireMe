@@ -110,3 +110,7 @@ The platform offers secure authentication ðŸ”’, a user-friendly booking system ð
 ![Categories Service](./Categories2Service.png)
 ![Categories Service](./Categories3Service.png)
 
+## ERD for all services
+![ERD](./ERD.png)
+
+
